@@ -1,7 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\web\HomeController;
+use App\Http\Controllers\web\NotesController;
+use App\Http\Controllers\web\FavoritesController;
+use App\Http\Controllers\web\ContactController;
+use App\Http\Controllers\web\AboutController;
+use App\Http\Controllers\web\CreateController;
+use App\Http\Controllers\web\UpdateController;
+use App\Http\Controllers\web\ProfileController;
+use App\Http\Controllers\web\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,30 +22,28 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/notes', function () {
-    return view('notes');
-});
+Route::get('/notes', [NotesController::class, 'index']);
 
-Route::get('/favorites', function () {
-    return view('favorites');
-});
+Route::get('/favorites', [FavoritesController::class, 'index']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [ContactController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/create', function () {
-    return view('create');
-});
+Route::get('/create', [CreateController::class, 'index']);
 
-Route::post('/create', function (Request $req) {
-    return $req;
-});
+Route::post('/create', [CreateController::class, 'create']);
+
+Route::get('/update', [UpdateController::class, 'index']);
+
+Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::get('/login', [AuthController::class, 'loginView']);
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/signup', [AuthController::class, 'signupView']);
+
+Route::post('/signup', [AuthController::class, 'signup']);

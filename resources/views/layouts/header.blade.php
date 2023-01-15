@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/create.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
 
 <body>
@@ -31,17 +32,27 @@
                 <li><a class="menu-item" href="/contact">CONTACT</a></li>
             </ul>
             <div class="spacer"></div>
-            
-            <!-- <div class="not-loggedin">
-                <button class="btn-fill">LOGIN</button>
-                <button class="btn-outlined">SIGNUP</button>
-            </div> -->
-            <div class="loggedin">
+
+            @php
+                if (session()->has('user')) {
+
+                }
+            @endphp
+
+            @if (session()->has('user'))
+            <div onclick="location.href='/profile';" class="loggedin">
                 <img class="avatar" src="assets/images/user.JPG" alt="">
                 <div class="name-email">
-                    <h5>Ahad Hashmi</h5>
-                    <p>ahadshah4949@gmail.com</p>
+                    <h5> {{session('user')['name']?? User}}</h5>
+                    <p>{{session('user')['email']?? email}}</p>
                 </div>
             </div>
+            @else
+                <div class="not-loggedin">
+                    <button onclick="location.href='/login';" class="btn-fill">LOGIN</button>
+                    <button onclick="location.href='/signup';" class="btn-outlined">SIGNUP</button>
+                </div>        
+            @endif
+            
         </nav>
     </section>

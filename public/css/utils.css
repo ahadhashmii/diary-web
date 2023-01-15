@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #f20091;
+}
+
+.spacer {
+    flex: 1;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+hr {
+    border-top: 1px solid rgb(227, 227, 227);
+    margin: 20px 0;
+}
+
+.btn-fill {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-outlined {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.btn-outlined:hover {
+    background-color: var(--primary-color);
+    color: white;
+}

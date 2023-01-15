@@ -1,0 +1,72 @@
+.header {
+    width: 100%;
+    background-color: white;
+}
+
+nav {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a h2 {
+    color: var(--primary-color);
+    margin-right: 50px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+}
+
+.menu-item:hover {
+    color: var(--primary-color);
+}
+
+.loggedin {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.loggedin img {
+    margin-right: 10px;
+}
+
+.name-email h5 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.name-email p {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.not-loggedin button {
+    margin: 0 5px;
+}

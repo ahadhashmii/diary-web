@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index() {
         if (session()->has('user')) {
             $id = session('user')['id'];
-            $notes = Note::where('user_id', $id)->get();
+            $notes = Note::with('favorite')->where('user_id', $id)->get();
             return view('home', ['notes' => $notes]);
         }else {
             return view('home', ['notes' => []]);

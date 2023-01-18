@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\DB;
 class FavoritesController extends Controller
 {
     public function index() {
-        $products = DB::table('notes')
-        ->join('favorites', 'notes.id', '=', 'favorites.note_id')
-        ->select('notes.*', 'favorites.*')
-        ->where('favorites.user_id', session('user')['id'])
-        ->get();
-        return $products;
-        return view('favorites');
+        if (session()->has('user')) {
+            $id = session('user')['id'];
+            $notes = Note::with('favorite')->where('user_id', $id)->get();
+            return view('favorites', ['notes' => $notes]);
+        }else {
+            return view('favorites', ['notes' => []]);
+        }
     }
 
     public function addFav($id) {

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="css/auth.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/details.css">
 </head>
 
 <body>

@@ -26,6 +26,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/notes', [NotesController::class, 'index']);
 
+Route::get('/notes/{id}', [NotesController::class, 'details']);
+
 Route::get('/favorites', [FavoritesController::class, 'index']);
 
 Route::get('/add-fav/{id}', [FavoritesController::class, 'addFav']);

@@ -28,6 +28,8 @@ Route::get('/notes', [NotesController::class, 'index']);
 
 Route::get('/favorites', [FavoritesController::class, 'index']);
 
+Route::get('/add-fav/{id}', [FavoritesController::class, 'addFav']);
+
 Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
@@ -39,6 +41,10 @@ Route::post('/create', [CreateController::class, 'create']);
 Route::get('/update', [UpdateController::class, 'index']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::post('/profile/update', [ProfileController::class, 'update']);
+
+Route::get('/logout', [ProfileController::class, 'logout']);
 
 Route::get('/login', [AuthController::class, 'loginView']);
 

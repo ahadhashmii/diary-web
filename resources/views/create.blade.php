@@ -6,7 +6,7 @@
 
 @section('content')
 
-<form action="/create" method="POST">
+<form class="create-form" action="/create" method="POST" enctype="multipart/form-data">
     @csrf
     <input class="title" name="title" type="text" placeholder="Title" required>
     <textarea name="description" id="" cols="30" rows="20" placeholder="Description" required></textarea>

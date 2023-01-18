@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Note;
 
 class CreateController extends Controller
 {
@@ -11,7 +12,24 @@ class CreateController extends Controller
         return view('create');
     }
 
-    public function create(Request $req) {
-        
+    public function create(Request $request) {
+        $validated = $request->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $note = new Note();
+        $note->title = $validated['title'];
+        $note->description = $validated['description'];
+        $note->user_id = session('user')['id'];
+        if ($request->hasFile('image')) {
+            $img = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->store('public/notes');
+            $note->image = $path;
+        }
+
+        if ($note->save()) {
+            return redirect('/');
+        }
     }
 }

@@ -1,0 +1,42 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.profile-form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.profile-form img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
+}
+
+.profile-form input {
+    border: none;
+    outline: none;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.profile-form button {
+    margin-top: 15px;
+}
+
+.profile .btn-outlined {
+    padding: 15px 40px;
+}
+
+.profile .btn-outlined {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+}

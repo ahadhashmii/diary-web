@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
@@ -33,15 +34,13 @@
             </ul>
             <div class="spacer"></div>
 
-            @php
-                if (session()->has('user')) {
-
-                }
-            @endphp
-
             @if (session()->has('user'))
             <div onclick="location.href='/profile';" class="loggedin">
-                <img class="avatar" src="assets/images/user.JPG" alt="">
+                @if (session('user')['image'])
+                    <img class="avatar" src="{{Storage::url(session('user')['image'])}}" alt="">
+                @else
+                <img class="avatar" src="assets/images/user.png" alt="">
+                @endif
                 <div class="name-email">
                     <h5> {{session('user')['name']?? User}}</h5>
                     <p>{{session('user')['email']?? email}}</p>

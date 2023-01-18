@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     use HasFactory;
+
+    public function getCreatedAtAttribute($value) {
+        return date('M d Y h:m a',strtotime($value));
+    }
 }

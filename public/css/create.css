@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-form {
+.create-form {
     max-width: 1200px;
     min-width: 50%;
     margin: 20px auto;

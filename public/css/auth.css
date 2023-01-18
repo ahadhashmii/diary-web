@@ -16,6 +16,7 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .login-form input {

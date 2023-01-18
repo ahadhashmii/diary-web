@@ -7,8 +7,8 @@
 @section('content')
 <div class="my-notes">
         <div class="notes-head">
-            <h1>Favorites (12)</h1>
-            <button class="btn-outlined">View All</button>
+            <h1>Favorites</h1>
+            {{-- <button class="btn-outlined">View All</button> --}}
         </div>
         <hr>
         <div class="item-note">

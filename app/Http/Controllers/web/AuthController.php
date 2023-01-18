@@ -19,9 +19,17 @@ class AuthController extends Controller
 
     public function login(Request $request) {
         $validated = $request->validate([
-            'email' => 'required!unique|email',
+            'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
+
+        $user = User::where('email', $request->email)->first();
+        if ($user && Hash::check($validated['password'], $user->password)) {
+            $request->session()->put('user', $user);
+            return redirect('/');
+        }else {
+            return back()->withErrors('These credentials do not match our records.');
+        }
     }
 
     public function signup(Request $request) {
@@ -40,6 +48,8 @@ class AuthController extends Controller
         if ($user->save()) {
             $request->session()->put('user', $user);
             return redirect('/');
+        }else {
+            return back()->withErrors('Something went wrong');
         }
     }
 }

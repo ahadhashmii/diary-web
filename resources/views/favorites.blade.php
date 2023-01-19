@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<div class="my-notes">
+<div style="min-height: 70vh;" class="my-notes">
         <div class="notes-head">
             <h1>Favorites</h1>
             {{-- <button class="btn-outlined">View All</button> --}}

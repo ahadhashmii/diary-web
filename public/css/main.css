@@ -81,6 +81,7 @@
     width: 30px;
     border-radius: 50%;
     padding: 3px;
+    z-index: 2;
 }
 
 .title-heart img:hover {

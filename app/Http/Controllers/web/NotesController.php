@@ -20,6 +20,28 @@ class NotesController extends Controller
 
     public function details($id) {
         $note = Note::with('favorite')->where('id', $id)->first();
-        return view('details');
+        return view('details', ['note' => $note]);
+    }
+
+    public function delete($id) {
+        Note::find($id)->delete();
+        return redirect('/notes');
+    }
+
+    public function show($id) {
+        $categories = [
+            'Nature',
+            'Beauty',
+            'Business'
+        ];
+        $note = Note::find($id);
+        return view('update', [
+            'note' => $note,
+            'categories' => $categories
+        ]);
+    }
+
+    public function update($id, Request $request) {
+
     }
 }

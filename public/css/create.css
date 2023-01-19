@@ -4,8 +4,7 @@
 }
 
 .create-form {
-    max-width: 1200px;
-    min-width: 50%;
+    width: 400px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -35,4 +34,17 @@ form textarea {
 
 .file {
     margin-top: 15px;
+}
+
+.category-picker {
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: medium;
+    background-color: white;
+}
+
+.category-item {
+    font-size: medium;
 }

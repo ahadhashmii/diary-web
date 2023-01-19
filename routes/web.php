@@ -28,6 +28,12 @@ Route::get('/notes', [NotesController::class, 'index']);
 
 Route::get('/notes/{id}', [NotesController::class, 'details']);
 
+Route::get('/update/{id}', [NotesController::class, 'show']);
+
+Route::post('/update/{id}', [NotesController::class, 'update']);
+
+Route::get('/notes/delete/{id}', [NotesController::class, 'delete']);
+
 Route::get('/favorites', [FavoritesController::class, 'index']);
 
 Route::get('/add-fav/{id}', [FavoritesController::class, 'addFav']);

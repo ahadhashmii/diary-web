@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<div class="my-notes">
+<div class="my-notes" style="min-height: 70vh;">
     <div class="notes-head">
         <h1>My Notes</h1>
         <button onclick="location.href='/create'" class="btn-outlined">Create New Note</button>

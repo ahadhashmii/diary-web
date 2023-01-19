@@ -12,14 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/create.css">
-    <link rel="stylesheet" href="css/auth.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="{{URL::asset('css/utils.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/header.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/footer.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/create.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/auth.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/profile.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/details.css')}}">
 </head>
 
 <body>

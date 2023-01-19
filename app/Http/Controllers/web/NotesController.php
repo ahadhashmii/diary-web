@@ -11,7 +11,7 @@ class NotesController extends Controller
     public function index() {
         if (session()->has('user')) {
             $id = session('user')['id'];
-            $notes = Note::with('favorite')->where('user_id', $id)->get();
+            $notes = Note::with('favorite')->where('user_id', $id)->paginate(2);
             return view('notes', ['notes' => $notes]);
         }else {
             return view('notes', ['notes' => []]);

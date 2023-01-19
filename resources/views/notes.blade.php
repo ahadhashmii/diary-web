@@ -19,4 +19,5 @@
         @endforeach
     @endif
 </div>
+{{$notes->links()}}
 @endsection

@@ -123,3 +123,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+.navigation {
+    align-items: flex-end;
+}
+
+.navigation .w-5, .h-5 {
+    width: 20px;
+    height: 20px;
+}
+
+.items-center {
+    align-items: flex-end;
+}
